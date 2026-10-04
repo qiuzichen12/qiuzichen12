@@ -103,38 +103,59 @@ const digitalTwinProjects = [
 ];
 
 /* =========================================================
-   Digital Twin Projects
+   Digital Twin Projects - Seamless Infinite Carousel
    ========================================================= */
 
 function DigitalTwinProjects() {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number | null>(null);
   const isPausedRef = useRef(false);
+  const positionRef = useRef(0);
+  const lastTimeRef = useRef<number | null>(null);
 
   useEffect(() => {
-    const container = scrollRef.current;
+    const track = trackRef.current;
 
-    if (!container) return;
+    if (!track) return;
 
-    const speed = 0.15;
-    let lastTime = performance.now();
+    const speed = 35;
 
     const animate = (currentTime: number) => {
-      const deltaTime = currentTime - lastTime;
-      lastTime = currentTime;
+      if (lastTimeRef.current === null) {
+        lastTimeRef.current = currentTime;
+      }
+
+      const deltaTime = Math.min(
+        currentTime - lastTimeRef.current,
+        50
+      );
+
+      lastTimeRef.current = currentTime;
 
       if (!isPausedRef.current) {
-        container.scrollLeft += speed * (deltaTime / 16.67);
+        positionRef.current += speed * (deltaTime / 1000);
 
-        const maxScrollLeft =
-          container.scrollWidth - container.clientWidth;
+        const firstProject = track.children[0] as HTMLElement | undefined;
+        const secondProject = track.children[1] as HTMLElement | undefined;
 
-        if (
-          maxScrollLeft > 0 &&
-          container.scrollLeft >= maxScrollLeft
-        ) {
-          container.scrollLeft = 0;
+        if (firstProject && secondProject) {
+          const firstWidth = firstProject.offsetWidth;
+          const gap = parseFloat(
+            window.getComputedStyle(track).columnGap ||
+              window.getComputedStyle(track).gap ||
+              '0'
+          );
+
+          const step = firstWidth + gap;
+
+          if (positionRef.current >= step) {
+            positionRef.current -= step;
+
+            track.appendChild(firstProject);
+          }
         }
+
+        track.style.transform = `translateX(-${positionRef.current}px)`;
       }
 
       animationRef.current = requestAnimationFrame(animate);
@@ -146,6 +167,8 @@ function DigitalTwinProjects() {
       if (animationRef.current !== null) {
         cancelAnimationFrame(animationRef.current);
       }
+
+      lastTimeRef.current = null;
     };
   }, []);
 
@@ -162,48 +185,50 @@ function DigitalTwinProjects() {
         </p>
       </div>
 
-      <div
-        ref={scrollRef}
-        className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide"
-        onMouseEnter={() => {
-          isPausedRef.current = true;
-        }}
-        onMouseLeave={() => {
-          isPausedRef.current = false;
-        }}
-        onTouchStart={() => {
-          isPausedRef.current = true;
-        }}
-        onTouchEnd={() => {
-          setTimeout(() => {
+      <div className="overflow-hidden">
+        <div
+          ref={trackRef}
+          className="flex gap-6 will-change-transform"
+          onMouseEnter={() => {
+            isPausedRef.current = true;
+          }}
+          onMouseLeave={() => {
             isPausedRef.current = false;
-          }, 1500);
-        }}
-      >
-        {digitalTwinProjects.map((project, index) => (
-          <article
-            key={`${project.title}-${index}`}
-            className="flex-none w-[380px] sm:w-[420px] rounded-xl border bg-card overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
-          >
-            <div className="aspect-video overflow-hidden bg-muted">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-              />
-            </div>
+          }}
+          onTouchStart={() => {
+            isPausedRef.current = true;
+          }}
+          onTouchEnd={() => {
+            setTimeout(() => {
+              isPausedRef.current = false;
+            }, 1200);
+          }}
+        >
+          {digitalTwinProjects.map((project, index) => (
+            <article
+              key={`${project.image}-${index}`}
+              className="flex-none w-[320px] sm:w-[360px] lg:w-[380px] rounded-xl border bg-card overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
+            >
+              <div className="aspect-video overflow-hidden bg-muted">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
 
-            <div className="p-5">
-              <h3 className="text-lg font-semibold leading-snug">
-                {project.title}
-              </h3>
+              <div className="p-5">
+                <h3 className="text-lg font-semibold leading-snug">
+                  {project.title}
+                </h3>
 
-              <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                {project.description}
-              </p>
-            </div>
-          </article>
-        ))}
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  {project.description}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
