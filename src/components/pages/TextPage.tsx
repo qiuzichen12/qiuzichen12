@@ -11,99 +11,47 @@ content: string;
 embedded?: boolean;
 }
 
-export default function TextPage({
-config,
-content,
-embedded = false,
-}: TextPageProps) {
 const getText = (child: React.ReactNode): string => {
 if (typeof child === 'string' || typeof child === 'number') {
 return String(child);
 }
 
 ```
-    if (Array.isArray(child)) {
-        return child.map(getText).join('');
-    }
+if (Array.isArray(child)) {
+    return child.map(getText).join('');
+}
 
-    if (React.isValidElement(child)) {
-        const props = child.props as { children?: React.ReactNode };
-        return getText(props.children);
-    }
+if (React.isValidElement(child)) {
+    const props = child.props as { children?: React.ReactNode };
+    return getText(props.children);
+}
 
-    return '';
+return '';
+```
+
 };
 
-const renderWithAlignment = (
-    children: React.ReactNode,
-    type: 'heading' | 'paragraph' | 'list'
-) => {
-    const text = getText(children);
-    const parts = text.split('|||');
-
-    if (parts.length !== 2) {
-        return null;
-    }
-
-    const left = parts[0].trim();
-    const right = parts[1].trim();
-
-    if (type === 'heading') {
-        return (
-            <div className="flex w-full items-baseline justify-between gap-4 mt-6 mb-3">
-                <h3 className="min-w-0 flex-1 text-xl font-semibold text-primary">
-                    {left}
-                </h3>
-                <span className="ml-auto shrink-0 whitespace-nowrap text-right text-sm text-neutral-600 dark:text-neutral-500">
-                    {right}
-                </span>
-            </div>
-        );
-    }
-
-    if (type === 'paragraph') {
-        return (
-            <div className="flex w-full items-baseline justify-between gap-4 mb-4">
-                <p className="min-w-0 flex-1 mb-0">
-                    {left}
-                </p>
-                <span className="ml-auto shrink-0 whitespace-nowrap text-right text-sm text-neutral-600 dark:text-neutral-500">
-                    {right}
-                </span>
-            </div>
-        );
-    }
-
-    return (
-        <li className="list-none mb-2 pl-0 ml-0">
-            <div className="flex w-full items-baseline justify-between gap-4">
-                <span className="min-w-0 flex-1">
-                    {left}
-                </span>
-                <span className="ml-auto shrink-0 whitespace-nowrap text-right text-sm text-neutral-600 dark:text-neutral-500">
-                    {right}
-                </span>
-            </div>
-        </li>
-    );
-};
-
+export default function TextPage({
+config,
+content,
+embedded = false,
+}: TextPageProps) {
 return (
-    <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        className={embedded ? '' : 'max-w-3xl mx-auto'}
-    >
-        <h1
-            className={
-                (embedded ? 'text-2xl' : 'text-4xl') +
-                ' font-serif font-bold text-primary mb-4'
-            }
-        >
-            {config.title}
-        </h1>
+<motion.div
+initial={{ opacity: 0, y: 20 }}
+animate={{ opacity: 1, y: 0 }}
+transition={{ duration: 0.6, delay: 0.4 }}
+className={embedded ? '' : 'max-w-3xl mx-auto'}
+>
+<h1
+className={
+(embedded ? 'text-2xl' : 'text-4xl') +
+' font-serif font-bold text-primary mb-4'
+}
+>
+{config.title} </h1>
 
+```
         {config.description && (
             <p
                 className={
@@ -131,13 +79,20 @@ return (
                     ),
 
                     h3: ({ children }) => {
-                        const aligned = renderWithAlignment(
-                            children,
-                            'heading'
-                        );
+                        const text = getText(children);
+                        const parts = text.split('|||');
 
-                        if (aligned) {
-                            return aligned;
+                        if (parts.length === 2) {
+                            return (
+                                <div className="flex w-full items-baseline justify-between gap-4 mt-6 mb-3">
+                                    <h3 className="min-w-0 flex-1 text-xl font-semibold text-primary">
+                                        {parts[0].trim()}
+                                    </h3>
+                                    <span className="ml-auto shrink-0 whitespace-nowrap text-right text-sm text-neutral-600 dark:text-neutral-500">
+                                        {parts[1].trim()}
+                                    </span>
+                                </div>
+                            );
                         }
 
                         return (
@@ -148,13 +103,20 @@ return (
                     },
 
                     p: ({ children }) => {
-                        const aligned = renderWithAlignment(
-                            children,
-                            'paragraph'
-                        );
+                        const text = getText(children);
+                        const parts = text.split('|||');
 
-                        if (aligned) {
-                            return aligned;
+                        if (parts.length === 2) {
+                            return (
+                                <div className="flex w-full items-baseline justify-between gap-4 mb-4">
+                                    <p className="min-w-0 flex-1 mb-0">
+                                        {parts[0].trim()}
+                                    </p>
+                                    <span className="ml-auto shrink-0 whitespace-nowrap text-right text-sm text-neutral-600 dark:text-neutral-500">
+                                        {parts[1].trim()}
+                                    </span>
+                                </div>
+                            );
                         }
 
                         return (
@@ -177,13 +139,22 @@ return (
                     ),
 
                     li: ({ children }) => {
-                        const aligned = renderWithAlignment(
-                            children,
-                            'list'
-                        );
+                        const text = getText(children);
+                        const parts = text.split('|||');
 
-                        if (aligned) {
-                            return aligned;
+                        if (parts.length === 2) {
+                            return (
+                                <li className="list-none mb-2 pl-0 ml-0">
+                                    <div className="flex w-full items-baseline justify-between gap-4">
+                                        <span className="min-w-0 flex-1">
+                                            {parts[0].trim()}
+                                        </span>
+                                        <span className="ml-auto shrink-0 whitespace-nowrap text-right text-sm text-neutral-600 dark:text-neutral-500">
+                                            {parts[1].trim()}
+                                        </span>
+                                    </div>
+                                </li>
+                            );
                         }
 
                         return (
