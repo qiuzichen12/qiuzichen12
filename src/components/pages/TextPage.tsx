@@ -27,12 +27,65 @@ return String(child);
     }
 
     if (React.isValidElement(child)) {
-        return getText(
-            (child.props as { children?: React.ReactNode }).children
-        );
+        const props = child.props as { children?: React.ReactNode };
+        return getText(props.children);
     }
 
     return '';
+};
+
+const renderWithAlignment = (
+    children: React.ReactNode,
+    type: 'heading' | 'paragraph' | 'list'
+) => {
+    const text = getText(children);
+    const parts = text.split('|||');
+
+    if (parts.length !== 2) {
+        return null;
+    }
+
+    const left = parts[0].trim();
+    const right = parts[1].trim();
+
+    if (type === 'heading') {
+        return (
+            <div className="flex w-full items-baseline justify-between gap-4 mt-6 mb-3">
+                <h3 className="min-w-0 flex-1 text-xl font-semibold text-primary">
+                    {left}
+                </h3>
+                <span className="ml-auto shrink-0 whitespace-nowrap text-right text-sm text-neutral-600 dark:text-neutral-500">
+                    {right}
+                </span>
+            </div>
+        );
+    }
+
+    if (type === 'paragraph') {
+        return (
+            <div className="flex w-full items-baseline justify-between gap-4 mb-4">
+                <p className="min-w-0 flex-1 mb-0">
+                    {left}
+                </p>
+                <span className="ml-auto shrink-0 whitespace-nowrap text-right text-sm text-neutral-600 dark:text-neutral-500">
+                    {right}
+                </span>
+            </div>
+        );
+    }
+
+    return (
+        <li className="list-none mb-2 pl-0 ml-0">
+            <div className="flex w-full items-baseline justify-between gap-4">
+                <span className="min-w-0 flex-1">
+                    {left}
+                </span>
+                <span className="ml-auto shrink-0 whitespace-nowrap text-right text-sm text-neutral-600 dark:text-neutral-500">
+                    {right}
+                </span>
+            </div>
+        </li>
+    );
 };
 
 return (
@@ -43,18 +96,20 @@ return (
         className={embedded ? '' : 'max-w-3xl mx-auto'}
     >
         <h1
-            className={`${
-                embedded ? 'text-2xl' : 'text-4xl'
-            } font-serif font-bold text-primary mb-4`}
+            className={
+                (embedded ? 'text-2xl' : 'text-4xl') +
+                ' font-serif font-bold text-primary mb-4'
+            }
         >
             {config.title}
         </h1>
 
         {config.description && (
             <p
-                className={`${
-                    embedded ? 'text-base' : 'text-lg'
-                } text-neutral-600 dark:text-neutral-500 mb-8 max-w-2xl`}
+                className={
+                    (embedded ? 'text-base' : 'text-lg') +
+                    ' text-neutral-600 dark:text-neutral-500 mb-8 max-w-2xl'
+                }
             >
                 {config.description}
             </p>
@@ -76,21 +131,13 @@ return (
                     ),
 
                     h3: ({ children }) => {
-                        const headingText = getText(children);
-                        const parts = headingText.split('|||');
+                        const aligned = renderWithAlignment(
+                            children,
+                            'heading'
+                        );
 
-                        if (parts.length === 2) {
-                            return (
-                                <div className="flex w-full items-baseline justify-between gap-4 mt-6 mb-3">
-                                    <h3 className="min-w-0 flex-1 text-xl font-semibold text-primary">
-                                        {parts[0].trim()}
-                                    </h3>
-
-                                    <span className="ml-auto shrink-0 whitespace-nowrap text-right text-sm text-neutral-600 dark:text-neutral-500">
-                                        {parts[1].trim()}
-                                    </span>
-                                </div>
-                            );
+                        if (aligned) {
+                            return aligned;
                         }
 
                         return (
@@ -101,21 +148,13 @@ return (
                     },
 
                     p: ({ children }) => {
-                        const paragraphText = getText(children);
-                        const parts = paragraphText.split('|||');
+                        const aligned = renderWithAlignment(
+                            children,
+                            'paragraph'
+                        );
 
-                        if (parts.length === 2) {
-                            return (
-                                <div className="flex w-full items-baseline justify-between gap-4 mb-4">
-                                    <p className="min-w-0 flex-1 mb-0">
-                                        {parts[0].trim()}
-                                    </p>
-
-                                    <span className="ml-auto shrink-0 whitespace-nowrap text-right text-sm text-neutral-600 dark:text-neutral-500">
-                                        {parts[1].trim()}
-                                    </span>
-                                </div>
-                            );
+                        if (aligned) {
+                            return aligned;
                         }
 
                         return (
@@ -138,23 +177,13 @@ return (
                     ),
 
                     li: ({ children }) => {
-                        const listItemText = getText(children);
-                        const parts = listItemText.split('|||');
+                        const aligned = renderWithAlignment(
+                            children,
+                            'list'
+                        );
 
-                        if (parts.length === 2) {
-                            return (
-                                <li className="list-none mb-2 pl-0 ml-0">
-                                    <div className="flex w-full items-baseline justify-between gap-4">
-                                        <span className="min-w-0 flex-1">
-                                            {parts[0].trim()}
-                                        </span>
-
-                                        <span className="ml-auto shrink-0 whitespace-nowrap text-right text-sm text-neutral-600 dark:text-neutral-500">
-                                            {parts[1].trim()}
-                                        </span>
-                                    </div>
-                                </li>
-                            );
+                        if (aligned) {
+                            return aligned;
                         }
 
                         return (
