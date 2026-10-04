@@ -1,5 +1,7 @@
-I am a PhD student at the School of Science, University of Example, advised by [Prof. Advisor One](https://example.com) and [Dr. Advisor Two](https://example.com).
+I am currently an M.S. student in Mechanical Engineering at the State Key Laboratory of Digital Manufacturing Equipment and Technology, Huazhong University of Science and Technology (HUST), advised by Prof. Chaoyong Zhang.
 
-Prior to this, I obtained a BSc degree with First Class Honours in Natural Science from the University of Example.
+Prior to this, I obtained a B.S. degree in Industrial Engineering from Huazhong University of Science and Technology in 2024. My undergraduate thesis focused on intelligent production line logistics modeling and implementation based on digital twins.
 
-My current research focuses on investigating the mathematical principles of natural philosophy.
+My research interests include Deep Learning, Transfer Learning, Domain Adaptation, Computer Vision, and Digital Twins. My current research focuses on developing data-driven and physics-informed intelligent manufacturing methods, with particular emphasis on tool wear prediction and recognition under variable working conditions, domain adaptation, and digital twin-based manufacturing systems.
+
+I am also interested in applying deep learning and digital twin technologies to intelligent manufacturing, equipment health management, and sustainable manufacturing.
