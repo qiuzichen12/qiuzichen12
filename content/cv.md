@@ -1,5 +1,3 @@
-# CV
-
 # Zichen Qiu
 
 **Nationality:** Hong Kong, China
