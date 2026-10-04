@@ -16,21 +16,40 @@ config,
 content,
 embedded = false,
 }: TextPageProps) {
-return (
-<motion.div
-initial={{ opacity: 0, y: 20 }}
-animate={{ opacity: 1, y: 0 }}
-transition={{ duration: 0.6, delay: 0.4 }}
-className={embedded ? '' : 'max-w-3xl mx-auto'}
->
-<h1
-className={`${
-                    embedded ? 'text-2xl' : 'text-4xl'
-                } font-serif font-bold text-primary mb-4`}
->
-{config.title} </h1>
+const getText = (child: React.ReactNode): string => {
+if (typeof child === 'string' || typeof child === 'number') {
+return String(child);
+}
 
 ```
+    if (Array.isArray(child)) {
+        return child.map(getText).join('');
+    }
+
+    if (React.isValidElement(child)) {
+        return getText(
+            (child.props as { children?: React.ReactNode }).children
+        );
+    }
+
+    return '';
+};
+
+return (
+    <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        className={embedded ? '' : 'max-w-3xl mx-auto'}
+    >
+        <h1
+            className={`${
+                embedded ? 'text-2xl' : 'text-4xl'
+            } font-serif font-bold text-primary mb-4`}
+        >
+            {config.title}
+        </h1>
+
         {config.description && (
             <p
                 className={`${
@@ -57,33 +76,6 @@ className={`${
                     ),
 
                     h3: ({ children }) => {
-                        const getText = (
-                            child: React.ReactNode
-                        ): string => {
-                            if (
-                                typeof child === 'string' ||
-                                typeof child === 'number'
-                            ) {
-                                return String(child);
-                            }
-
-                            if (Array.isArray(child)) {
-                                return child.map(getText).join('');
-                            }
-
-                            if (React.isValidElement(child)) {
-                                return getText(
-                                    (
-                                        child.props as {
-                                            children?: React.ReactNode;
-                                        }
-                                    ).children
-                                );
-                            }
-
-                            return '';
-                        };
-
                         const headingText = getText(children);
                         const parts = headingText.split('|||');
 
@@ -109,33 +101,6 @@ className={`${
                     },
 
                     p: ({ children }) => {
-                        const getText = (
-                            child: React.ReactNode
-                        ): string => {
-                            if (
-                                typeof child === 'string' ||
-                                typeof child === 'number'
-                            ) {
-                                return String(child);
-                            }
-
-                            if (Array.isArray(child)) {
-                                return child.map(getText).join('');
-                            }
-
-                            if (React.isValidElement(child)) {
-                                return getText(
-                                    (
-                                        child.props as {
-                                            children?: React.ReactNode;
-                                        }
-                                    ).children
-                                );
-                            }
-
-                            return '';
-                        };
-
                         const paragraphText = getText(children);
                         const parts = paragraphText.split('|||');
 
@@ -173,33 +138,6 @@ className={`${
                     ),
 
                     li: ({ children }) => {
-                        const getText = (
-                            child: React.ReactNode
-                        ): string => {
-                            if (
-                                typeof child === 'string' ||
-                                typeof child === 'number'
-                            ) {
-                                return String(child);
-                            }
-
-                            if (Array.isArray(child)) {
-                                return child.map(getText).join('');
-                            }
-
-                            if (React.isValidElement(child)) {
-                                return getText(
-                                    (
-                                        child.props as {
-                                            children?: React.ReactNode;
-                                        }
-                                    ).children
-                                );
-                            }
-
-                            return '';
-                        };
-
                         const listItemText = getText(children);
                         const parts = listItemText.split('|||');
 
