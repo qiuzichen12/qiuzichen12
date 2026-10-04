@@ -14,18 +14,18 @@
 
 ## EDUCATION
 
-<div style="display: flex; justify-content: space-between; width: 100%; align-items: baseline;">
-<strong>Huazhong University of Science and Technology</strong>
-<span style="white-space: nowrap;">Sep. 2024 – Present</span>
+<div style="display: flex; justify-content: space-between; align-items: baseline; width: 100%; margin-bottom: 0.5rem;">
+  <strong>Huazhong University of Science and Technology</strong>
+  <span style="white-space: nowrap;">Sep. 2024 – Present</span>
 </div>
 
 *M.S.*, Mechanical Engineering (GPA: 3.69/4.00)
 
 Advisor: Prof. Chaoyong Zhang
 
-<div style="display: flex; justify-content: space-between; width: 100%; align-items: baseline;">
-<strong>Huazhong University of Science and Technology</strong>
-<span style="white-space: nowrap;">Sep. 2020 – Jun. 2024</span>
+<div style="display: flex; justify-content: space-between; align-items: baseline; width: 100%; margin-bottom: 0.5rem;">
+  <strong>Huazhong University of Science and Technology</strong>
+  <span style="white-space: nowrap;">Sep. 2020 – Jun. 2024</span>
 </div>
 
 *B.S.*, Industrial Engineering (GPA: 3.30/4.00)
@@ -33,6 +33,7 @@ Advisor: Prof. Chaoyong Zhang
 Advisor: Prof. Chaoyong Zhang
 
 Thesis: Intelligent Production Line Logistics Modeling and Implementation Based on Digital Twins
+
 
 
 
