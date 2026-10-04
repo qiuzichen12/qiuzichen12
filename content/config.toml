@@ -41,7 +41,7 @@ default_locale = "en"
 
 # "auto" means the locale will be determined by the browser's language setting.
 # "fixed" means the locale will be fixed to the default locale but can still be switched.
-mode = "auto"
+mode = "fixed"
 fixed_locale = "en"
 
 # Remember user's language preference in browser's localStorage
