@@ -1,4 +1,4 @@
-```tsx
+
 'use client';
 
 import Profile from '@/components/home/Profile';
@@ -204,4 +204,4 @@ function DigitalTwinProjects() {
                 w-[380px]
                 sm:w-[420px]
                 rounded-xl
-```
+
