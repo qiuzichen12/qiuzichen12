@@ -1,27 +1,32 @@
+# CV
+
 # Zichen Qiu
 
 **Nationality:** Hong Kong, China
-**Huazhong University of Science and Technology (HUST, 985)**
-**State Key Laboratory of Digital Manufacturing Equipment and Technology**
+
+**Institution:** Huazhong University of Science and Technology (HUST, 985)
+
+**Laboratory:** State Key Laboratory of Digital Manufacturing Equipment and Technology
+
 **IELTS:** 7.0 (Listening 7.5, Reading 7.0, Writing 6.5, Speaking 6.5)
+
 **Phone Number:** (86) 17605975066
+
 **Email:** [qiuzichen@hust.edu.cn](mailto:qiuzichen@hust.edu.cn)
 
 ## EDUCATION
 
-<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;">
-<strong>Huazhong University of Science and Technology</strong>
-<span style="white-space: nowrap;">Sep. 2024 – Present</span>
-</div>
+**Huazhong University of Science and Technology**
+
+*Sep. 2024 – Present*
 
 *M.S.*, Mechanical Engineering (GPA: 3.69/4.00)
 
 Advisor: Prof. Chaoyong Zhang
 
-<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;">
-<strong>Huazhong University of Science and Technology</strong>
-<span style="white-space: nowrap;">Sep. 2020 – Jun. 2024</span>
-</div>
+**Huazhong University of Science and Technology**
+
+*Sep. 2020 – Jun. 2024*
 
 *B.S.*, Industrial Engineering (GPA: 3.30/4.00)
 
@@ -49,10 +54,9 @@ Deep Learning, Transfer Learning, Domain Adaptation, Computer Vision, Digital Tw
 
 ## RESEARCH EXPERIENCE
 
-<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;">
-<strong>Demonstration and Verification Line for Ultra-Large Integrated Die-Casting Forming and Machining Equipment for Lightweight New Energy Vehicle Bodies</strong>
-<span style="white-space: nowrap;">Apr. 2025 – Present</span>
-</div>
+**Demonstration and Verification Line for Ultra-Large Integrated Die-Casting Forming and Machining Equipment for Lightweight New Energy Vehicle Bodies**
+
+*Apr. 2025 – Present*
 
 *National Science and Technology Major Project*
 
@@ -61,29 +65,26 @@ Deep Learning, Transfer Learning, Domain Adaptation, Computer Vision, Digital Tw
 * Built a back-end data management and service platform based on Java Spring Boot.
 * Enabled real-time data communication between front-end and back-end via WebSocket.
 
-<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;">
-<strong>Research and Application of Machine Tool Health Management Technology</strong>
-<span style="white-space: nowrap;">Sep. 2024 – Jul. 2025</span>
-</div>
+**Research and Application of Machine Tool Health Management Technology**
+
+*Sep. 2024 – Jul. 2025*
 
 *Wuhan Heavy Duty Machine Tool Group*
 
 * Developed a digital twin system for CNC milling based on Unity3D.
 * Conducted data- and physics-informed bearing fault diagnosis and remaining useful life prediction.
 
-<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;">
-<strong>Intelligent Prediction and Adaptive Control for High-Quality and High-Efficiency CNC Machining Driven by Data and Model Integration</strong>
-<span style="white-space: nowrap;">Jan. 2025 – Present</span>
-</div>
+**Intelligent Prediction and Adaptive Control for High-Quality and High-Efficiency CNC Machining Driven by Data and Model Integration**
+
+*Jan. 2025 – Present*
 
 *Hubei Provincial Science and Technology Enterprise Service Project*
 
 * Participated in proposal preparation and helped define research objectives and scope.
 
-<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;">
-<strong>Research and System Development of Energy and Resource Efficiency Improvement Methods for Sustainable Manufacturing</strong>
-<span style="white-space: nowrap;">Jun. 2024 – Jun. 2025</span>
-</div>
+**Research and System Development of Energy and Resource Efficiency Improvement Methods for Sustainable Manufacturing**
+
+*Jun. 2024 – Jun. 2025*
 
 *Sino-German Key R&D Project*
 
@@ -91,30 +92,27 @@ Deep Learning, Transfer Learning, Domain Adaptation, Computer Vision, Digital Tw
 
 ## WORK EXPERIENCE
 
-<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;">
-<strong>L.K. Technology Holdings Limited</strong>
-<span style="white-space: nowrap;">Shenzhen, China</span>
-</div>
+**L.K. Technology Holdings Limited**
+
+*Shenzhen, China*
 
 *Software Engineer (Internship)*
 
-<div style="text-align: right;">Jun. 2025 – Aug. 2025</div>
+*Jun. 2025 – Aug. 2025*
 
-<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;">
-<strong>Cobot Technology Co., Ltd.</strong>
-<span style="white-space: nowrap;">Wuhan, China</span>
-</div>
+**Cobot Technology Co., Ltd.**
+
+*Wuhan, China*
 
 *Data Engineer (Internship)*
 
-<div style="text-align: right;">Jul. 2023 – Aug. 2023</div>
+*Jul. 2023 – Aug. 2023*
 
 ## CAMPUS EXPERIENCE
 
-<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;">
-<strong>Graduate Student Science and Technology Association</strong>
-<span style="white-space: nowrap;">Jan. 2025 – Present</span>
-</div>
+**Graduate Student Science and Technology Association**
+
+*Jan. 2025 – Present*
 
 *Director*
 
@@ -125,13 +123,13 @@ Deep Learning, Transfer Learning, Domain Adaptation, Computer Vision, Digital Tw
 
 *National Undergraduate Innovation and Entrepreneurship Program*
 
-<div style="text-align: right;">May 2022 – May 2023</div>
+*May 2022 – May 2023*
 
 ## HONORS & PRIZES
 
-* Baosteel Excellent Student Scholarship <span style="float: right;">2025</span>
-* Hong Kong, Macao and Overseas Chinese Student Scholarship (Grand Prize) <span style="float: right;">2025</span>
-* China Undergraduate Mechanical Engineering Innovation and Creative Competition, National Second Prize <span style="float: right;">November 2022</span>
+* Baosteel Excellent Student Scholarship — **2025**
+* Hong Kong, Macao and Overseas Chinese Student Scholarship (Grand Prize) — **2025**
+* China Undergraduate Mechanical Engineering Innovation and Creative Competition, National Second Prize — **November 2022**
 * Excellent Completion Award, National Undergraduate Innovation and Entrepreneurship Program project, *Automated Fuel Cell Assembly Enabled by a Collaborative Robot*
 
 ## PROFESSIONAL SKILLS
