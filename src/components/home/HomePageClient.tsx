@@ -1,4 +1,3 @@
-
 'use client';
 
 import Profile from '@/components/home/Profile';
@@ -104,7 +103,7 @@ const digitalTwinProjects = [
 ];
 
 /* =========================================================
-   Digital Twin Projects - Infinite Carousel
+   Digital Twin Projects
    ========================================================= */
 
 function DigitalTwinProjects() {
@@ -117,9 +116,7 @@ function DigitalTwinProjects() {
 
     if (!container) return;
 
-    // Scrolling speed
     const speed = 0.15;
-
     let lastTime = performance.now();
 
     const animate = (currentTime: number) => {
@@ -127,17 +124,11 @@ function DigitalTwinProjects() {
       lastTime = currentTime;
 
       if (!isPausedRef.current) {
-        container.scrollLeft +=
-          speed * (deltaTime / 16.67);
+        container.scrollLeft += speed * (deltaTime / 16.67);
 
         const maxScrollLeft =
-          container.scrollWidth -
-          container.clientWidth;
+          container.scrollWidth - container.clientWidth;
 
-        /*
-         * When reaching the end,
-         * smoothly restart from the beginning.
-         */
         if (
           maxScrollLeft > 0 &&
           container.scrollLeft >= maxScrollLeft
@@ -146,37 +137,31 @@ function DigitalTwinProjects() {
         }
       }
 
-      animationRef.current =
-        requestAnimationFrame(animate);
+      animationRef.current = requestAnimationFrame(animate);
     };
 
-    animationRef.current =
-      requestAnimationFrame(animate);
+    animationRef.current = requestAnimationFrame(animate);
 
     return () => {
       if (animationRef.current !== null) {
-        cancelAnimationFrame(
-          animationRef.current
-        );
+        cancelAnimationFrame(animationRef.current);
       }
     };
   }, []);
 
   return (
     <section className="space-y-5">
-      {/* Section title */}
       <div>
         <h2 className="text-2xl font-semibold tracking-tight">
           Digital Twin Projects
         </h2>
 
         <p className="text-muted-foreground mt-2">
-          Selected projects in digital twin development and
-          intelligent manufacturing.
+          Selected projects in digital twin development and intelligent
+          manufacturing.
         </p>
       </div>
 
-      {/* Project carousel */}
       <div
         ref={scrollRef}
         className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide"
@@ -195,13 +180,140 @@ function DigitalTwinProjects() {
           }, 1500);
         }}
       >
-        {digitalTwinProjects.map(
-          (project, index) => (
-            <article
-              key={`${project.title}-${index}`}
-              className="
-                flex-none
-                w-[380px]
-                sm:w-[420px]
-                rounded-xl
+        {digitalTwinProjects.map((project, index) => (
+          <article
+            key={`${project.title}-${index}`}
+            className="flex-none w-[380px] sm:w-[420px] rounded-xl border bg-card overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
+          >
+            <div className="aspect-video overflow-hidden bg-muted">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
 
+            <div className="p-5">
+              <h3 className="text-lg font-semibold leading-snug">
+                {project.title}
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                {project.description}
+              </p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================
+   Home Page
+   ========================================================= */
+
+export default function HomePageClient({
+  dataByLocale,
+  defaultLocale,
+}: HomePageClientProps) {
+  const locale = useLocaleStore((state) => state.locale);
+
+  const fallback =
+    dataByLocale[defaultLocale] || Object.values(dataByLocale)[0];
+
+  const data = dataByLocale[locale] || fallback;
+
+  if (!data) {
+    return null;
+  }
+
+  return (
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-background min-h-screen">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="lg:col-span-1">
+          <Profile
+            author={data.author}
+            social={data.social}
+            features={data.features}
+            researchInterests={data.researchInterests}
+          />
+        </div>
+
+        <div className="lg:col-span-2 space-y-8">
+          {data.pagesToShow.map((page) => (
+            <section
+              key={page.id}
+              id={page.id}
+              className="scroll-mt-24 space-y-8"
+            >
+              {page.type === 'about' &&
+                page.sections.map((section: SectionConfig) => {
+                  switch (section.type) {
+                    case 'markdown':
+                      return (
+                        <div key={section.id} className="space-y-8">
+                          <About
+                            content={section.content || ''}
+                            title={section.title}
+                          />
+
+                          {section.id === 'about' && (
+                            <DigitalTwinProjects />
+                          )}
+                        </div>
+                      );
+
+                    case 'publications':
+                      return (
+                        <SelectedPublications
+                          key={section.id}
+                          publications={section.publications || []}
+                          title={section.title}
+                          enableOnePageMode={data.enableOnePageMode}
+                        />
+                      );
+
+                    case 'list':
+                      return (
+                        <News
+                          key={section.id}
+                          items={section.items || []}
+                          title={section.title}
+                        />
+                      );
+
+                    default:
+                      return null;
+                  }
+                })}
+
+              {page.type === 'publication' && (
+                <PublicationsList
+                  config={page.config}
+                  publications={page.publications}
+                  embedded={true}
+                />
+              )}
+
+              {page.type === 'text' && (
+                <TextPage
+                  config={page.config}
+                  content={page.content}
+                  embedded={true}
+                />
+              )}
+
+              {page.type === 'card' && (
+                <CardPage
+                  config={page.config}
+                  embedded={true}
+                />
+              )}
+            </section>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
