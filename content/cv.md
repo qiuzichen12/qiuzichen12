@@ -42,10 +42,10 @@ Deep Learning, Transfer Learning, Domain Adaptation, Computer Vision, Digital Tw
    **Research:** Developed an unsupervised domain adaptation method for machine vision-based tool wear recognition to address distribution shifts between laboratory data and low-quality industrial images, leveraging dual-level distribution alignment and feature consistency constraints for cross-domain feature optimization.
 
 3. Yiqun Dai, Saixiyalatu Bao, **Zichen Qiu**, Chaoyong Zhang, Yang Xie, and Jianzhao Wu. Data-mechanism hybrid driven milling energy assessment considering the entire tool life cycle: An improved probability model applied to multi-conditions. *Journal of Cleaner Production*. **(Q1, IF: 10.7, Under Review)**
+   **Research:** Investigated a data-mechanism hybrid approach for assessing milling energy consumption throughout the entire tool life cycle under multiple operating conditions, with an improved probability model designed to characterize energy variations and enhance multi-condition assessment accuracy.
 
 4. Saixiyalatu Bao, Zhongze Han, Linran Chen, **Zichen Qiu**, and Chaoyong Zhang. Multi-source uncertainty guided semi-supervised multimodal tool wear recognition and prediction in extremely label-scarce scenarios. *Expert Systems with Applications*, 2026. **(Q1, IF: 9.4, Published)**
-
-
+   **Research:** Developed a semi-supervised multimodal tool wear recognition and prediction framework guided by multi-source uncertainty to improve model performance and robustness under extremely label-scarce conditions.
 
 
 ## RESEARCH EXPERIENCE
