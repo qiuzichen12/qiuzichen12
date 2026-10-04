@@ -7,7 +7,9 @@ interface FooterProps {
   defaultLocale?: string;
 }
 
-export default function Footer(_props: FooterProps) {
+export default function Footer(props: FooterProps) {
+  void props;
+
   return (
     <footer className="border-t border-neutral-200/50 bg-neutral-50/50 dark:bg-neutral-900/50 dark:border-neutral-700/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
