@@ -8,8 +8,6 @@
 
 **IELTS:** 7.0 (Listening 7.5, Reading 7.0, Writing 6.5, Speaking 6.5)
 
-**Phone Number:** (86) 17605975066
-
 **Phone Number:** (86) 17605975066　　**Email:** [qiuzichen@hust.edu.cn](mailto:qiuzichen@hust.edu.cn)
 
 ## EDUCATION
