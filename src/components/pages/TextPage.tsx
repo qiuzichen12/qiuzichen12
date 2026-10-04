@@ -82,12 +82,11 @@ export default function TextPage({
                             const headingText = getText(children);
                             const parts = headingText.split('|||');
 
-                            // Left content + right date
                             if (parts.length === 2) {
                                 return (
                                     <div className="flex w-full items-baseline justify-between gap-4 mt-6 mb-3">
                                         <h3 className="min-w-0 flex-1 text-xl font-semibold text-primary">
-                                            {children}
+                                            {parts[0].trim()}
                                         </h3>
 
                                         <span className="ml-auto shrink-0 whitespace-nowrap text-right text-sm text-neutral-600 dark:text-neutral-500">
@@ -104,11 +103,51 @@ export default function TextPage({
                             );
                         },
 
-                        p: ({ children }) => (
-                            <p className="mb-4 last:mb-0">
-                                {children}
-                            </p>
-                        ),
+                        p: ({ children }) => {
+                            const getText = (
+                                child: React.ReactNode
+                            ): string => {
+                                if (
+                                    typeof child === 'string' ||
+                                    typeof child === 'number'
+                                ) {
+                                    return String(child);
+                                }
+
+                                if (Array.isArray(child)) {
+                                    return child.map(getText).join('');
+                                }
+
+                                if (React.isValidElement(child)) {
+                                    return getText(child.props.children);
+                                }
+
+                                return '';
+                            };
+
+                            const paragraphText = getText(children);
+                            const parts = paragraphText.split('|||');
+
+                            if (parts.length === 2) {
+                                return (
+                                    <div className="flex w-full items-baseline justify-between gap-4 mb-4">
+                                        <p className="min-w-0 flex-1 mb-0">
+                                            {parts[0].trim()}
+                                        </p>
+
+                                        <span className="ml-auto shrink-0 whitespace-nowrap text-right text-sm text-neutral-600 dark:text-neutral-500">
+                                            {parts[1].trim()}
+                                        </span>
+                                    </div>
+                                );
+                            }
+
+                            return (
+                                <p className="mb-4 last:mb-0">
+                                    {children}
+                                </p>
+                            );
+                        },
 
                         ul: ({ children }) => (
                             <ul className="list-disc list-inside mb-4 pl-0 ml-0 space-y-1">
@@ -147,7 +186,6 @@ export default function TextPage({
                             const listItemText = getText(children);
                             const parts = listItemText.split('|||');
 
-                            // Left content + right year/date
                             if (parts.length === 2) {
                                 return (
                                     <li className="list-none mb-2 pl-0 ml-0">
@@ -206,16 +244,3 @@ export default function TextPage({
     );
 }
 ```
-
-然后你的 Honors 保持这样：
-
-```markdown
-## HONORS & PRIZES
-
-- Baosteel Excellent Student Scholarship ||| **2025**
-- Hong Kong, Macao and Overseas Chinese Student Scholarship (Grand Prize) ||| **2025**
-- China Undergraduate Mechanical Engineering Innovation and Creative Competition, National Second Prize ||| **November 2022**
-- Excellent Completion Award, National Undergraduate Innovation and Entrepreneurship Program project, *Automated Fuel Cell Assembly Enabled by a Collaborative Robot*
-```
-
-这样修改后，**不要再改 `ol` 的 `list-inside`**。你的 `1. 2. 3.` 和 `•` 都会保持在正文左边界以内。
