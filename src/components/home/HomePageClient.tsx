@@ -1,3 +1,4 @@
+```tsx
 'use client';
 
 import Profile from '@/components/home/Profile';
@@ -102,6 +103,10 @@ const digitalTwinProjects = [
   },
 ];
 
+/* =========================================================
+   Digital Twin Projects - Infinite Carousel
+   ========================================================= */
+
 function DigitalTwinProjects() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number | null>(null);
@@ -115,33 +120,44 @@ function DigitalTwinProjects() {
     // Scrolling speed
     const speed = 0.15;
 
-    const animate = () => {
+    let lastTime = performance.now();
+
+    const animate = (currentTime: number) => {
+      const deltaTime = currentTime - lastTime;
+      lastTime = currentTime;
+
       if (!isPausedRef.current) {
-        container.scrollLeft += speed;
+        container.scrollLeft +=
+          speed * (deltaTime / 16.67);
 
         const maxScrollLeft =
-          container.scrollWidth - container.clientWidth;
+          container.scrollWidth -
+          container.clientWidth;
 
-        // Stop when reaching the final project
-        if (container.scrollLeft >= maxScrollLeft) {
-          container.scrollLeft = maxScrollLeft;
-
-          if (animationRef.current !== null) {
-            cancelAnimationFrame(animationRef.current);
-          }
-
-          return;
+        /*
+         * When reaching the end,
+         * smoothly restart from the beginning.
+         */
+        if (
+          maxScrollLeft > 0 &&
+          container.scrollLeft >= maxScrollLeft
+        ) {
+          container.scrollLeft = 0;
         }
       }
 
-      animationRef.current = requestAnimationFrame(animate);
+      animationRef.current =
+        requestAnimationFrame(animate);
     };
 
-    animationRef.current = requestAnimationFrame(animate);
+    animationRef.current =
+      requestAnimationFrame(animate);
 
     return () => {
       if (animationRef.current !== null) {
-        cancelAnimationFrame(animationRef.current);
+        cancelAnimationFrame(
+          animationRef.current
+        );
       }
     };
   }, []);
@@ -155,8 +171,8 @@ function DigitalTwinProjects() {
         </h2>
 
         <p className="text-muted-foreground mt-2">
-          Selected projects in digital twin development and intelligent
-          manufacturing.
+          Selected projects in digital twin development and
+          intelligent manufacturing.
         </p>
       </div>
 
@@ -179,174 +195,13 @@ function DigitalTwinProjects() {
           }, 1500);
         }}
       >
-        {digitalTwinProjects.map((project, index) => (
-          <article
-            key={`${project.title}-${index}`}
-            className="flex-none w-[320px] sm:w-[360px] rounded-xl border bg-card overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
-          >
-            {/* Project image */}
-            <div className="aspect-video overflow-hidden bg-muted">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-              />
-            </div>
-
-            {/* Project information */}
-            <div className="p-5">
-              <h3 className="text-lg font-semibold leading-snug">
-                {project.title}
-              </h3>
-
-              <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                {project.description}
-              </p>
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-/* =========================================================
-   Home Page
-   ========================================================= */
-
-export default function HomePageClient({
-  dataByLocale,
-  defaultLocale,
-}: HomePageClientProps) {
-  const locale = useLocaleStore((state) => state.locale);
-
-  const fallback =
-    dataByLocale[defaultLocale] || Object.values(dataByLocale)[0];
-
-  const data = dataByLocale[locale] || fallback;
-
-  if (!data) {
-    return null;
-  }
-
-  return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-background min-h-screen">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-        {/* =================================================
-            Left Column - Profile
-            ================================================= */}
-        <div className="lg:col-span-1">
-          <Profile
-            author={data.author}
-            social={data.social}
-            features={data.features}
-            researchInterests={data.researchInterests}
-          />
-        </div>
-
-        {/* =================================================
-            Right Column - Main Content
-            ================================================= */}
-        <div className="lg:col-span-2 space-y-8">
-          {data.pagesToShow.map((page) => (
-            <section
-              key={page.id}
-              id={page.id}
-              className="scroll-mt-24 space-y-8"
-            >
-              {/* =================================================
-                  About Page
-                  ================================================= */}
-              {page.type === 'about' &&
-                page.sections.map((section: SectionConfig) => {
-                  switch (section.type) {
-                    /* -----------------------------------------
-                       Markdown / About
-                       ----------------------------------------- */
-                    case 'markdown':
-                      return (
-                        <div
-                          key={section.id}
-                          className="space-y-8"
-                        >
-                          <About
-                            content={section.content || ''}
-                            title={section.title}
-                          />
-
-                          {/* Digital Twin Projects */}
-                          {section.id === 'about' && (
-                            <DigitalTwinProjects />
-                          )}
-                        </div>
-                      );
-
-                    /* -----------------------------------------
-                       Selected Publications
-                       ----------------------------------------- */
-                    case 'publications':
-                      return (
-                        <SelectedPublications
-                          key={section.id}
-                          publications={section.publications || []}
-                          title={section.title}
-                          enableOnePageMode={data.enableOnePageMode}
-                        />
-                      );
-
-                    /* -----------------------------------------
-                       News
-                       ----------------------------------------- */
-                    case 'list':
-                      return (
-                        <News
-                          key={section.id}
-                          items={section.items || []}
-                          title={section.title}
-                        />
-                      );
-
-                    default:
-                      return null;
-                  }
-                })}
-
-              {/* =================================================
-                  Publication Page
-                  ================================================= */}
-              {page.type === 'publication' && (
-                <PublicationsList
-                  config={page.config}
-                  publications={page.publications}
-                  embedded={true}
-                />
-              )}
-
-              {/* =================================================
-                  Text Page
-                  ================================================= */}
-              {page.type === 'text' && (
-                <TextPage
-                  config={page.config}
-                  content={page.content}
-                  embedded={true}
-                />
-              )}
-
-              {/* =================================================
-                  Card Page
-                  ================================================= */}
-              {page.type === 'card' && (
-                <CardPage
-                  config={page.config}
-                  embedded={true}
-                />
-              )}
-            </section>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
+        {digitalTwinProjects.map(
+          (project, index) => (
+            <article
+              key={`${project.title}-${index}`}
+              className="
+                flex-none
+                w-[380px]
+                sm:w-[420px]
+                rounded-xl
+```
