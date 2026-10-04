@@ -11,44 +11,30 @@ institution = "Huazhong University of Science and Technology"
 avatar = "/bio.jpg"
 
 [social]
-# Contact information (leave blank or delete to hide)
-
-email = "qiuzichen@hust.edu.cn"
+email = "[qiuzichen@hust.edu.cn](mailto:qiuzichen@hust.edu.cn)"
 location = "Wuhan, China"
 location_url = "https://www.google.com/maps/search/?api=1&query=Huazhong+University+of+Science+and+Technology"
 location_details = [
-  "State Key Laboratory of Digital Manufacturing Equipment and Technology,",
-  "Huazhong University of Science and Technology, Wuhan, China"
+"State Key Laboratory of Digital Manufacturing Equipment and Technology,",
+"Huazhong University of Science and Technology, Wuhan, China"
 ]
-
-# Add your actual academic/social profile URLs when available
 google_scholar = ""
 orcid = ""
 github = ""
 linkedin = ""
 
 [features]
-# Show a like button on the about page
 enable_likes = true
-
-# Display all subpages on a single page
 enable_one_page_mode = false
 
 [i18n]
 enabled = true
 locales = ["zh", "en"]
 default_locale = "en"
-
-# "auto" means the locale will be determined by the browser's language setting.
-# "fixed" means the locale will be fixed to the default locale but can still be switched.
 mode = "fixed"
 fixed_locale = "en"
-
-# Remember user's language preference in browser's localStorage
 persist = true
-
-# Show a language switcher on the top right corner
-switcher = true
+switcher = false
 
 [i18n.labels]
 zh = "中文"
