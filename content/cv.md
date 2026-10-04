@@ -36,16 +36,16 @@ Deep Learning, Transfer Learning, Domain Adaptation, Computer Vision, Digital Tw
 ## PUBLICATIONS
 
 1. **Zichen Qiu**, Weiming Shen, Saixiyalatu Bao, Yiqun Dai, Zhongze Han, Jianzhao Wu, and Chaoyong Zhang. Physics-guided two-stage unsupervised domain adversarial neural network based on contrastive learning for tool wear prediction under variable working conditions. *Journal of Manufacturing Processes*. **(Q1, IF: 7.8, Minor Revision)**
+
    **Research:** Developed a physics-informed data-driven hybrid prediction framework by integrating an end-to-end contrastive learning-based feature extractor with an improved two-stage adversarial domain adaptation network, improving cross-operating-condition prediction accuracy and model generalization capability.
 
 2. **Saixiyalatu Bao**, **Zichen Qiu**, Bao Chao, Linran Chen, and Chaoyong Zhang. Consistency-assisted dual-level distribution alignment for unsupervised domain adaptive tool wear recognition towards real-world application. *Journal of Manufacturing Processes*, 2026. **(Q1, IF: 7.8, Published)**
-   **Research:** Developed an unsupervised domain adaptation method for machine vision-based tool wear recognition to address distribution shifts between laboratory data and low-quality industrial images, leveraging dual-level distribution alignment and feature consistency constraints for cross-domain feature optimization.
+
+    **Research:** Developed an unsupervised domain adaptation method for machine vision-based tool wear recognition to address distribution shifts between laboratory data and low-quality industrial images, leveraging dual-level distribution alignment and feature consistency constraints for cross-domain feature optimization.
 
 3. **Yiqun Dai**, Saixiyalatu Bao, **Zichen Qiu**, Chaoyong Zhang, Yang Xie, and Jianzhao Wu. Data-mechanism hybrid driven milling energy assessment considering the entire tool life cycle: An improved probability model applied to multi-conditions. *Journal of Cleaner Production*. **(Q1, IF: 10.7, Under Review)**
-   **Research:**
 
 4. Saixiyalatu Bao, Zhongze Han, Linran Chen, **Zichen Qiu**, and Chaoyong Zhang. Multi-source uncertainty guided semi-supervised multimodal tool wear recognition and prediction in extremely label-scarce scenarios. *Expert Systems with Applications*, 2026. **(Q1, IF: 9.4, Published)**
-   **Research:**
 
 
 
