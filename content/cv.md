@@ -49,9 +49,7 @@ Deep Learning, Transfer Learning, Domain Adaptation, Computer Vision, Digital Tw
 
 ## RESEARCH EXPERIENCE
 
-**Demonstration and Verification Line for Ultra-Large Integrated Die-Casting Forming and Machining Equipment for Lightweight New Energy Vehicle Bodies**
-
-*Apr. 2025 – Present*
+### Demonstration and Verification Line for Ultra-Large Integrated Die-Casting Forming and Machining Equipment for Lightweight New Energy Vehicle Bodies ||| Apr. 2025 – Present
 
 *National Science and Technology Major Project*
 
@@ -60,65 +58,55 @@ Deep Learning, Transfer Learning, Domain Adaptation, Computer Vision, Digital Tw
 * Built a back-end data management and service platform based on Java Spring Boot.
 * Enabled real-time data communication between front-end and back-end via WebSocket.
 
-**Research and Application of Machine Tool Health Management Technology**
-
-*Sep. 2024 – Jul. 2025*
+### Research and Application of Machine Tool Health Management Technology ||| Sep. 2024 – Jul. 2025
 
 *Wuhan Heavy Duty Machine Tool Group*
 
 * Developed a digital twin system for CNC milling based on Unity3D.
 * Conducted data- and physics-informed bearing fault diagnosis and remaining useful life prediction.
 
-**Intelligent Prediction and Adaptive Control for High-Quality and High-Efficiency CNC Machining Driven by Data and Model Integration**
-
-*Jan. 2025 – Present*
+### Intelligent Prediction and Adaptive Control for High-Quality and High-Efficiency CNC Machining Driven by Data and Model Integration ||| Jan. 2025 – Present
 
 *Hubei Provincial Science and Technology Enterprise Service Project*
 
 * Participated in proposal preparation and helped define research objectives and scope.
 
-**Research and System Development of Energy and Resource Efficiency Improvement Methods for Sustainable Manufacturing**
-
-*Jun. 2024 – Jun. 2025*
+### Research and System Development of Energy and Resource Efficiency Improvement Methods for Sustainable Manufacturing ||| Jun. 2024 – Jun. 2025
 
 *Sino-German Key R&D Project*
 
 * Developed a digital twin system for intelligent production lines based on Unity3D.
 
+
 ## WORK EXPERIENCE
 
 **L.K. Technology Holdings Limited**
-
 *Shenzhen, China*
 
 *Software Engineer (Internship)*
-
 *Jun. 2025 – Aug. 2025*
 
 **Cobot Technology Co., Ltd.**
-
 *Wuhan, China*
 
 *Data Engineer (Internship)*
-
 *Jul. 2023 – Aug. 2023*
 
 ## CAMPUS EXPERIENCE
 
 **Graduate Student Science and Technology Association**
 
+*Director*
 *Jan. 2025 – Present*
 
-*Director*
-
-* Organized academic lectures delivered by academicians, including Ning Yan, Zheng You, and Wanlin Guo.
+* Organized academic lectures delivered by academicians (e.g., Ning Yan, Zheng You, and Wanlin Guo).
 * Interviewed Academicians Wanlin Guo, Hairong Zheng, and Zhenqi Hu.
 
 **Utilized a Commercial Collaborative Robot to Enable Automated Fuel Cell Assembly**
 
 *National Undergraduate Innovation and Entrepreneurship Program*
-
 *May 2022 – May 2023*
+
 
 ## HONORS & PRIZES
 
