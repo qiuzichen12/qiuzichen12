@@ -134,19 +134,28 @@ export default function TextPage({
                             </ul>
                         ),
 
+                        /*
+                         * 修改这里：
+                         * 不使用 space-y-4，避免每个 publication
+                         * 之间出现过大的空白。
+                         */
                         ol: ({ children }) => (
-                            <ol className="list-decimal list-inside mb-4 pl-0 ml-0 space-y-4">
+                            <ol className="list-decimal list-outside mb-4 pl-6 ml-0 space-y-2">
                                 {children}
                             </ol>
                         ),
 
+                        /*
+                         * 修改这里：
+                         * 保持编号 1. 和正文在同一行。
+                         */
                         li: ({ children }) => {
                             const text = getText(children);
                             const parts = text.split('|||');
 
                             if (parts.length === 2) {
                                 return (
-                                    <li className="list-none mb-2 pl-0 ml-0">
+                                    <li className="mb-2 pl-0 ml-0">
                                         <div className="flex w-full items-baseline justify-between gap-4">
                                             <span className="min-w-0 flex-1">
                                                 {parts[0].trim()}
@@ -161,7 +170,7 @@ export default function TextPage({
                             }
 
                             return (
-                                <li className="mb-1 pl-0 ml-0">
+                                <li className="mb-3 pl-0 ml-0">
                                     {children}
                                 </li>
                             );
