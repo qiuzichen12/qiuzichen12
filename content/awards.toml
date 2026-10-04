@@ -3,25 +3,25 @@ title = "Awards"
 description = "Honors and awards I have received."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
+title = "Baosteel Excellent Student Scholarship"
+subtitle = "Baosteel Education Foundation"
 date = "2025"
-content = "Description of the award."
+content = "Awarded the Baosteel Excellent Student Scholarship."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
-date = "2024"
-content = "Description of the award."
+title = "Hong Kong, Macao and Overseas Chinese Student Scholarship (Grand Prize)"
+subtitle = "Ministry of Education of the People's Republic of China"
+date = "2025"
+content = "Awarded the Grand Prize of the Hong Kong, Macao and Overseas Chinese Student Scholarship."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
-date = "2023"
-content = "Description of the award."
+title = "China Undergraduate Mechanical Engineering Innovation and Creative Competition"
+subtitle = "National-Level Award"
+date = "2022-11-30"
+content = "National Second Prize."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
-date = "2022"
-content = "Description of the award."
+title = "Automated Fuel Cell Assembly Enabled by a Collaborative Robot"
+subtitle = "National Undergraduate Innovation and Entrepreneurship Program"
+date = ""
+content = "Excellent Completion Award."
