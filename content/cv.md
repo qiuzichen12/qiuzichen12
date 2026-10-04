@@ -47,6 +47,8 @@ Deep Learning, Transfer Learning, Domain Adaptation, Computer Vision, Digital Tw
 
 4. Saixiyalatu Bao, Zhongze Han, Linran Chen, **Zichen Qiu**, and Chaoyong Zhang. Multi-source uncertainty guided semi-supervised multimodal tool wear recognition and prediction in extremely label-scarce scenarios. *Expert Systems with Applications*, 2026. **(Q1, IF: 9.4, Published)**
 
+
+
 ## RESEARCH EXPERIENCE
 
 ### Demonstration and Verification Line for Ultra-Large Integrated Die-Casting Forming and Machining Equipment for Lightweight New Energy Vehicle Bodies ||| Apr. 2025 – Present
