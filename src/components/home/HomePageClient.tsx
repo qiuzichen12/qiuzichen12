@@ -176,7 +176,7 @@ function DigitalTwinProjects() {
     <section className="space-y-5">
       <div>
         <h2 className="text-2xl font-semibold tracking-tight">
-          Digital Twin Projects
+          Unity3D- and WebGL-Based Digital Twin Projects
         </h2>
 
         <p className="text-muted-foreground mt-2">
