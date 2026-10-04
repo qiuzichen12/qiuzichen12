@@ -82,7 +82,7 @@ function DigitalTwinProjects() {
 
     if (!container) return;
 
-    const speed = 0.5;
+    const speed = 0.15;
 
     const animate = () => {
       if (!isPausedRef.current) {
