@@ -80,40 +80,37 @@ Deep Learning, Transfer Learning, Domain Adaptation, Computer Vision, Digital Tw
 
 ## WORK EXPERIENCE
 
-**L.K. Technology Holdings Limited**
-*Shenzhen, China*
+**L.K. Technology Holdings Limited** ||| *Shenzhen, China*
 
-*Software Engineer (Internship)*
-*Jun. 2025 – Aug. 2025*
+*Software Engineer (Internship)* ||| *Jun. 2025 – Aug. 2025*
 
-**Cobot Technology Co., Ltd.**
-*Wuhan, China*
+**Cobot Technology Co., Ltd.** ||| *Wuhan, China*
 
-*Data Engineer (Internship)*
-*Jul. 2023 – Aug. 2023*
+*Data Engineer (Internship)* ||| *Jul. 2023 – Aug. 2023*
+
 
 ## CAMPUS EXPERIENCE
 
 **Graduate Student Science and Technology Association**
 
-*Director*
-*Jan. 2025 – Present*
+*Director* ||| *Jan. 2025 – Present*
 
 * Organized academic lectures delivered by academicians (e.g., Ning Yan, Zheng You, and Wanlin Guo).
 * Interviewed Academicians Wanlin Guo, Hairong Zheng, and Zhenqi Hu.
 
 **Utilized a Commercial Collaborative Robot to Enable Automated Fuel Cell Assembly**
 
-*National Undergraduate Innovation and Entrepreneurship Program*
-*May 2022 – May 2023*
+*National Undergraduate Innovation and Entrepreneurship Program* ||| *May 2022 – May 2023*
+
 
 
 ## HONORS & PRIZES
 
-* Baosteel Excellent Student Scholarship — **2025**
-* Hong Kong, Macao and Overseas Chinese Student Scholarship (Grand Prize) — **2025**
-* China Undergraduate Mechanical Engineering Innovation and Creative Competition, National Second Prize — **November 2022**
+* Baosteel Excellent Student Scholarship ||| **2025**
+* Hong Kong, Macao and Overseas Chinese Student Scholarship (Grand Prize) ||| **2025**
+* China Undergraduate Mechanical Engineering Innovation and Creative Competition, National Second Prize ||| **November 2022**
 * Excellent Completion Award, National Undergraduate Innovation and Entrepreneurship Program project, *Automated Fuel Cell Assembly Enabled by a Collaborative Robot*
+
 
 ## PROFESSIONAL SKILLS
 
