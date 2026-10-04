@@ -88,6 +88,7 @@ className={
                                     <h3 className="min-w-0 flex-1 text-xl font-semibold text-primary">
                                         {parts[0].trim()}
                                     </h3>
+
                                     <span className="ml-auto shrink-0 whitespace-nowrap text-right text-sm text-neutral-600 dark:text-neutral-500">
                                         {parts[1].trim()}
                                     </span>
@@ -112,6 +113,7 @@ className={
                                     <p className="min-w-0 flex-1 mb-0">
                                         {parts[0].trim()}
                                     </p>
+
                                     <span className="ml-auto shrink-0 whitespace-nowrap text-right text-sm text-neutral-600 dark:text-neutral-500">
                                         {parts[1].trim()}
                                     </span>
@@ -149,6 +151,7 @@ className={
                                         <span className="min-w-0 flex-1">
                                             {parts[0].trim()}
                                         </span>
+
                                         <span className="ml-auto shrink-0 whitespace-nowrap text-right text-sm text-neutral-600 dark:text-neutral-500">
                                             {parts[1].trim()}
                                         </span>
@@ -193,10 +196,5 @@ className={
                 }}
             >
                 {content}
-            </ReactMarkdown>
-        </div>
-    </motion.div>
-);
+            </
 ```
-
-}
