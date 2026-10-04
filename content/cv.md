@@ -48,6 +48,7 @@ Deep Learning, Transfer Learning, Domain Adaptation, Computer Vision, Digital Tw
    **Research:** Developed a semi-supervised multimodal tool wear recognition and prediction framework guided by multi-source uncertainty to improve model performance and robustness under extremely label-scarce conditions.
 
 
+
 ## RESEARCH EXPERIENCE
 
 ### Demonstration and Verification Line for Ultra-Large Integrated Die-Casting Forming and Machining Equipment for Lightweight New Energy Vehicle Bodies ||| Apr. 2025 – Present
