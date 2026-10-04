@@ -10,27 +10,34 @@
 
 **Phone Number:** (86) 17605975066
 
-**Email:** [qiuzichen@hust.edu.cn](mailto:qiuzichen@hust.edu.cn)
+**Phone Number:** (86) 17605975066　　**Email:** [qiuzichen@hust.edu.cn](mailto:qiuzichen@hust.edu.cn)
 
 ## EDUCATION
 
-**Huazhong University of Science and Technology**
-
-*Sep. 2024 – Present*
+<table>
+  <tr>
+    <td><strong>Huazhong University of Science and Technology</strong></td>
+    <td align="right">Sep. 2024 – Present</td>
+  </tr>
+</table>
 
 *M.S.*, Mechanical Engineering (GPA: 3.69/4.00)
 
 Advisor: Prof. Chaoyong Zhang
 
-**Huazhong University of Science and Technology**
-
-*Sep. 2020 – Jun. 2024*
+<table>
+  <tr>
+    <td><strong>Huazhong University of Science and Technology</strong></td>
+    <td align="right">Sep. 2020 – Jun. 2024</td>
+  </tr>
+</table>
 
 *B.S.*, Industrial Engineering (GPA: 3.30/4.00)
 
 Advisor: Prof. Chaoyong Zhang
 
 Thesis: Intelligent Production Line Logistics Modeling and Implementation Based on Digital Twins
+
 
 ## RESEARCH INTERESTS
 
