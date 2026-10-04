@@ -73,8 +73,7 @@ export default function TextPage({
 
                             const parts = headingText.split('|||');
 
-                            // Education heading: school on the left,
-                            // date aligned to the right.
+                            // Education: school left, date right.
                             if (parts.length === 2) {
                                 return (
                                     <div className="flex w-full items-baseline justify-between gap-4 mt-6 mb-3">
@@ -101,19 +100,19 @@ export default function TextPage({
                         ),
 
                         ul: ({ children }) => (
-                            <ul className="list-disc list-outside mb-4 ml-6 space-y-1">
+                            <ul className="list-disc list-outside mb-4 pl-0 ml-0 space-y-1">
                                 {children}
                             </ul>
                         ),
 
                         ol: ({ children }) => (
-                            <ol className="list-decimal list-outside mb-4 ml-6 space-y-4">
+                            <ol className="list-decimal list-outside mb-4 pl-0 ml-0 space-y-4">
                                 {children}
                             </ol>
                         ),
 
                         li: ({ children }) => (
-                            <li className="pl-1 mb-1">
+                            <li className="mb-1 pl-0 ml-0">
                                 {children}
                             </li>
                         ),
