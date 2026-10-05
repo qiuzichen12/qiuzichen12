@@ -84,13 +84,16 @@ Deep Learning, Transfer Learning, Domain Adaptation, Computer Vision, Digital Tw
 
 ## WORK EXPERIENCE
 
-**L.K. Technology Holdings Limited** ||| *Shenzhen, China*
+**L.K. Technology Holdings Limited**
 
 *Software Engineer (Internship)* ||| *Jun. 2025 – Aug. 2025*
+*Shenzhen, China*
 
-**Cobot Technology Co., Ltd.** ||| *Wuhan, China*
+**Cobot Technology Co., Ltd.**
 
 *Data Engineer (Internship)* ||| *Jul. 2023 – Aug. 2023*
+*Wuhan, China*
+
 
 
 ## CAMPUS EXPERIENCE
