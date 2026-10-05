@@ -169,13 +169,13 @@ export default function Profile({
                 Profile Image
                ===================================================== */}
 
-            <div className="w-64 h-64 mx-auto mb-6 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 bg-neutral-100 dark:bg-neutral-800">
+            <div className="w-64 h-64 mx-auto mb-6 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105">
                 <Image
                     src={author.avatar}
                     alt={author.name}
                     width={256}
                     height={256}
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover object-top"
                     priority
                 />
             </div>
