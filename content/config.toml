@@ -46,20 +46,22 @@ target = "about"
 href = "/"
 
 [[navigation]]
+title = "Projects"
+type = "page"
+target = "projects"
+href = "/projects"
+
+[[navigation]]
 title = "Publications"
 type = "page"
 target = "publications"
 href = "/publications"
-
-
 
 [[navigation]]
 title = "Awards"
 type = "page"
 target = "awards"
 href = "/awards"
-
-
 
 [[navigation]]
 title = "CV"
