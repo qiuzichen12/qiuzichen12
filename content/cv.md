@@ -117,12 +117,6 @@ Baosteel Excellent Student Scholarship ||| **2025**
 
 Hong Kong, Macao and Overseas Chinese Student Scholarship (Grand Prize) ||| **2025**
 
-China Undergraduate Mechanical Engineering Innovation and Creative Competition, National Second Prize ||| **November 2022**
-
-Excellent Completion Award, National Undergraduate Innovation and Entrepreneurship Program project, *Automated Fuel Cell Assembly Enabled by a Collaborative Robot*
-
-
-
 ## PROFESSIONAL SKILLS
 
 * **Programming:** Python (very proficient), C# / Java / JavaScript (proficient), C++ (basic)
