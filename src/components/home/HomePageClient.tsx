@@ -82,7 +82,7 @@ const digitalTwinProjects = [
       'A WebGL-based digital twin system for ultra-large integrated die-casting forming and machining equipment, supporting 3D visualization and real-time data synchronization.',
     videoUrl:
       'https://drive.google.com/file/d/1Qa8iQUoelive3W4LtOTyA5elFUs1FBQb/view?usp=sharing',
-    videoLabel: 'WebGL Demonstration Video',
+    videoLabel: 'Play Video',
   },
 
   {
@@ -94,7 +94,7 @@ const digitalTwinProjects = [
       'A Unity3D-based digital twin system for CNC milling equipment, integrating equipment visualization with data-driven and physics-informed fault diagnosis.',
     videoUrl:
       'https://drive.google.com/file/d/1Gmv_aZPjh--paDCaWhfGIZ_CwKjAYx93/view?usp=sharing',
-    videoLabel: 'Project Demonstration Video',
+    videoLabel: 'Play Video',
   },
 
   {
@@ -109,7 +109,7 @@ const digitalTwinProjects = [
       'A Unity3D-based digital twin system for sustainable manufacturing, integrating virtual scenes, equipment models, and industrial data to support 3D visualization and cyber–physical interaction.',
     videoUrl:
       'https://drive.google.com/file/d/13gBxrhYPj7cGgYv8-3fCIu75NBWXF0DB/view?usp=sharing',
-    videoLabel: 'Digital Twin Demonstration Video',
+    videoLabel: 'Play Video',
   },
 ];
 
@@ -147,7 +147,8 @@ function DigitalTwinProjects() {
       if (!isPausedRef.current) {
         positionRef.current += speed * (deltaTime / 1000);
 
-        const firstProject = track.children[0] as HTMLElement | undefined;
+        const firstProject =
+          track.children[0] as HTMLElement | undefined;
 
         if (firstProject) {
           const gap = parseFloat(
@@ -158,7 +159,6 @@ function DigitalTwinProjects() {
 
           if (positionRef.current >= step) {
             positionRef.current -= step;
-
             track.appendChild(firstProject);
           }
 
@@ -212,55 +212,130 @@ function DigitalTwinProjects() {
             isPausedRef.current = false;
           }}
         >
-          {digitalTwinProjects.map((project, index) => (
-            <article
-              key={`${project.type}-${index}`}
-              className="
-                flex-none
-                w-[320px]
-                sm:w-[360px]
-                lg:w-[380px]
-                rounded-xl
-                border
-                bg-card
-                overflow-hidden
-                shadow-sm
-                hover:shadow-lg
-                transition-shadow
-                duration-300
-              "
-            >
-              {/* =================================================
-                  Single Image Project
-                 ================================================= */}
-              {project.type === 'single' && (
-                <div className="aspect-video overflow-hidden bg-muted">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    loading="lazy"
-                    decoding="async"
-                    className="
-                      w-full
-                      h-full
-                      object-cover
-                      transition-transform
-                      duration-500
-                      hover:scale-105
-                    "
-                  />
-                </div>
-              )}
+          {digitalTwinProjects.map((project, index) => {
+            /*
+             * -----------------------------------------------------
+             * Normal project
+             * -----------------------------------------------------
+             */
+            if (project.type === 'single') {
+              return (
+                <article
+                  key={`${project.type}-${index}`}
+                  className="
+                    flex-none
+                    w-[320px]
+                    sm:w-[360px]
+                    lg:w-[380px]
+                    rounded-xl
+                    border
+                    bg-card
+                    overflow-hidden
+                    shadow-sm
+                    hover:shadow-lg
+                    transition-shadow
+                    duration-300
+                  "
+                >
+                  {/* Image */}
+                  <div className="aspect-video overflow-hidden bg-muted">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="
+                        w-full
+                        h-full
+                        object-cover
+                        transition-transform
+                        duration-500
+                        hover:scale-105
+                      "
+                    />
+                  </div>
 
-              {/* =================================================
-                  Two Image Project
-                 ================================================= */}
-              {project.type === 'double' && (
+                  {/* Information */}
+                  <div className="p-5">
+                    <h3 className="text-lg font-semibold leading-snug">
+                      {project.title}
+                    </h3>
+
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                      {project.description}
+                    </p>
+
+                    {/* Video */}
+                    <div className="mt-4">
+                      <a
+                        href={project.videoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="
+                          inline-flex
+                          items-center
+                          gap-2
+                          text-sm
+                          font-medium
+                          text-primary
+                          hover:underline
+                        "
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="h-4 w-4"
+                        >
+                          <polygon points="6 3 20 12 6 21 6 3" />
+                        </svg>
+
+                        {project.videoLabel}
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              );
+            }
+
+            /*
+             * -----------------------------------------------------
+             * Bishe project - two images in one wide card
+             * -----------------------------------------------------
+             */
+            return (
+              <article
+                key={`${project.type}-${index}`}
+                className="
+                  flex-none
+                  w-[640px]
+                  sm:w-[720px]
+                  lg:w-[760px]
+                  rounded-xl
+                  border
+                  bg-card
+                  overflow-hidden
+                  shadow-sm
+                  hover:shadow-lg
+                  transition-shadow
+                  duration-300
+                "
+              >
+                {/* =================================================
+                    Two Images
+                   ================================================= */}
                 <div className="grid grid-cols-2 gap-1 bg-muted">
                   {project.images.map((image, imageIndex) => (
                     <div
                       key={image}
-                      className="aspect-video overflow-hidden"
+                      className="
+                        aspect-video
+                        overflow-hidden
+                      "
                     >
                       <img
                         src={image}
@@ -281,57 +356,55 @@ function DigitalTwinProjects() {
                     </div>
                   ))}
                 </div>
-              )}
-
-              {/* =================================================
-                  Project Information
-                 ================================================= */}
-              <div className="p-5">
-                <h3 className="text-lg font-semibold leading-snug">
-                  {project.title}
-                </h3>
-
-                <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                  {project.description}
-                </p>
 
                 {/* =================================================
-                    Video Link
+                    One shared project description
                    ================================================= */}
-                <div className="mt-4">
-                  <a
-                    href={project.videoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="
-                      inline-flex
-                      items-center
-                      gap-2
-                      text-sm
-                      font-medium
-                      text-primary
-                      hover:underline
-                    "
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-4 w-4"
-                    >
-                      <polygon points="6 3 20 12 6 21 6 3" />
-                    </svg>
+                <div className="p-5">
+                  <h3 className="text-lg font-semibold leading-snug">
+                    {project.title}
+                  </h3>
 
-                    {project.videoLabel}
-                  </a>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                    {project.description}
+                  </p>
+
+                  {/* Video */}
+                  <div className="mt-4">
+                    <a
+                      href={project.videoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="
+                        inline-flex
+                        items-center
+                        gap-2
+                        text-sm
+                        font-medium
+                        text-primary
+                        hover:underline
+                      "
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="h-4 w-4"
+                      >
+                        <polygon points="6 3 20 12 6 21 6 3" />
+                      </svg>
+
+                      {project.videoLabel}
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
