@@ -174,7 +174,7 @@ export default function Profile({
                     src={author.avatar}
                     alt={author.name}
                     width={256}
-                    height={256}
+                    height={300}
                     className="w-full h-full object-cover object-top"
                     priority
                 />
