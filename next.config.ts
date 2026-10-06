@@ -4,6 +4,9 @@ const nextConfig: NextConfig = {
 output: 'export',
 trailingSlash: true,
 
+basePath: '/qiuzichen12',
+assetPrefix: '/qiuzichen12',
+
 images: {
 unoptimized: true,
 },
