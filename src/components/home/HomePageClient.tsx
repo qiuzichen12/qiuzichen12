@@ -79,7 +79,7 @@ const digitalTwinProjects = [
     title:
       'Demonstration and Verification Line for Ultra-Large Integrated Die-Casting Forming and Machining Equipment for Lightweight New Energy Vehicle Bodies',
     description:
-      'A WebGL-based digital twin system for ultra-large integrated die-casting forming and machining equipment, supporting 3D visualization and real-time data synchronization.',
+      'WebGL-based Digital Twin for Integrated Die-Casting Equipment',
     videoUrl:
       'https://drive.google.com/file/d/1Qa8iQUoelive3W4LtOTyA5elFUs1FBQb/view?usp=sharing',
     videoLabel: 'Play Video',
@@ -91,7 +91,7 @@ const digitalTwinProjects = [
     title:
       'Research and Application of Machine Tool Health Management Technology',
     description:
-      'A Unity3D-based digital twin system for CNC milling equipment, integrating equipment visualization with data-driven and physics-informed fault diagnosis.',
+      'Unity3D-based Digital Twin System for Milling Machines',
     videoUrl:
       'https://drive.google.com/file/d/1Gmv_aZPjh--paDCaWhfGIZ_CwKjAYx93/view?usp=sharing',
     videoLabel: 'Play Video',
@@ -106,7 +106,7 @@ const digitalTwinProjects = [
     title:
       'Research and System Development of Energy and Resource Efficiency Improvement Methods for Sustainable Manufacturing',
     description:
-      'A Unity3D-based digital twin system for sustainable manufacturing, integrating virtual scenes, equipment models, and industrial data to support 3D visualization and cyber–physical interaction.',
+      'Unity3D-based Digital Twin for Intelligent Production Line Logistics',
     videoUrl:
       'https://drive.google.com/file/d/13gBxrhYPj7cGgYv8-3fCIu75NBWXF0DB/view?usp=sharing',
     videoLabel: 'Play Video',
